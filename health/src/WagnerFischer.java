@@ -1,6 +1,6 @@
-package helth.classes;
+package health.classes;
 
-import helth.classes.*;
+import health.classes.*;
 
 class WagnerFischer{
     
