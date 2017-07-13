@@ -2,30 +2,58 @@ package health.classes;
 
 import health.classes.*;
 
+
+/**
+ * WagnerFischer 
+ *
+ * Wagner Fischer Minimum Edit Distance algorithm
+ *
+ * @author sagar sagautam5@gmail.com
+ * @version 1.0
+ *
+ * @param void
+ * @return void
+ *
+ * @since 2017-07-12
+ *
+ */
 class WagnerFischer{
     
-    public int getLevenshteinDistance(String str1, String str2){
+    /**
+     *
+     * Function getLevensthteinDistance
+     *
+     * Get Minimum edit distance between two string variables
+     *
+     * @param first -> distance calculated for string
+     * @param seocond -> distance calculated with string
+     *
+     * @return distance
+     *
+     */
+    
+    public int getLevenshteinDistance(String first, String second){
         
-        int len1,len2;
+        int lenFirst,lenSecond;
 
-		len1 = str1.length();
-		len2 = str2.length();
+		lenFirst = first.length();
+		lenSecond = second.length();
 
-		int[][] arr = new int[len1 + 1][len2 + 1];
+		int[][] data = new int[lenFirst + 1][lenSecond + 1];
 
-		for (int i = 0; i <= len1; i++)
+		for (int i = 0; i <= lenFirst; i++)
             
-            arr[i][0] = i;
-		    for (int i = 1; i <= len2; i++)
+            data[i][0] = i;
+		    for (int i = 1; i <= lenSecond; i++)
 		    
-                arr[0][i] = i;
-		        for (int i = 1; i <= len1; i++){
+                data[0][i] = i;
+		        for (int i = 1; i <= lenFirst; i++){
             
-                    for (int j = 1; j <= len2; j++){
-                        int m = (str1.charAt(i - 1) == str2.charAt(j - 1)) ? 0:1;                        
-		                arr[i][j] = Math.min(Math.min(arr[i - 1][j] + 1, arr[i][j - 1] + 1), arr[i - 1][j - 1] + m);
+                    for (int j = 1; j <= lenSecond; j++){
+                        int m = (first.charAt(i - 1) == second.charAt(j - 1)) ? 0:1;                        
+		                data[i][j] = Math.min(Math.min(data[i - 1][j] + 1, data[i][j - 1] + 1), data[i - 1][j - 1] + m);
 		            }
 		        }
-    	return arr[len1][len2];
+    	return data[lenFirst][lenSecond];
     }
 }
