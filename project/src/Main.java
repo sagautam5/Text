@@ -42,7 +42,7 @@ class Main{
         
         Porter porter = new Porter();
         for(int i=0; i<result.size(); i++){
-            tokens.set(i,porter.stripAffixes(result.get(i)));
+            result.set(i,porter.stripAffixes(result.get(i)));
         }
          
         System.out.println("News after stop word removal");
