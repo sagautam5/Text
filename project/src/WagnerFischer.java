@@ -1,6 +1,6 @@
-package health.classes;
+package project.classes;
 
-import health.classes.*;
+import project.classes.*;
 
 
 /**

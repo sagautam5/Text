@@ -7,11 +7,11 @@
              input and returns the stem of this String again as a String.
 
 */ 
-package health.classes;
+package project.classes;
 
 import java.io.*;
 
-import health.classes.*;
+import project.classes.*;
 
 class NewString {
   public String str;

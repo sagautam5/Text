@@ -1,9 +1,9 @@
 
-package health.classes;
+package project.classes;
 
 import java.util.*;
 
-import health.classes.*;
+import project.classes.*;
 
 /**
  * Main Class for testing purpose of Tokenization/StopWord Removal/

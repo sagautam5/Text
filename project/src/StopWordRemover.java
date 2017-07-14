@@ -1,11 +1,11 @@
 
-package health.classes;
+package project.classes;
 
 
 import java.io.*;
 import java.util.*;
 
-import health.classes.*;
+import project.classes.*;
 
 /**
  * Stop Word Remover

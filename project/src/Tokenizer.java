@@ -1,9 +1,9 @@
 
-package health.classes;
+package project.classes;
 
 import java.util.*;
 
-import health.classes.*;
+import project.classes.*;
 
 /**
  * Tokenizer
