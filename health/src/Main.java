@@ -30,11 +30,20 @@ class Main{
         System.out.println("Tokens with white space tokenization");
         for(int i=0; i<tokens.size(); i++){
             System.out.println(tokens.get(i));
-        }
+        }  
         
         StopWordRemover stopWordRemover = new StopWordRemover();
         ArrayList<String> result = stopWordRemover.removeStopWords(tokens);
         
+        System.out.println("News after stop word removal");
+        for(int i=0; i<result.size(); i++){
+            System.out.println(result.get(i));
+        }
+        
+        Porter porter = new Porter();
+        for(int i=0; i<result.size(); i++){
+            tokens.set(i,porter.stripAffixes(result.get(i)));
+        }
          
         System.out.println("News after stop word removal");
         for(int i=0; i<result.size(); i++){
