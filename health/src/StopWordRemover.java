@@ -25,7 +25,7 @@ import health.classes.*;
 
 class StopWordRemover{
     
-    private String fileName = "../data/words/stopwords.txt";
+    private String fileName = "health/data/words/stopwords.txt";
     private ArrayList<String> stopWords = new ArrayList<String>();
     
     /**
