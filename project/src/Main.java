@@ -22,32 +22,25 @@ import project.classes.*;
 
 class Main{
     public static void main(String[] args){
-        String string = new String("#MCFC are working hard to sign French prodigy Kylian Mbappe this summer, according to Graham Hunter - Read here");
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Enter Text: ");
+        String text = reader.nextLine();
 
-        Tokenizer tokenizer = new Tokenizer(string);
-        ArrayList<String> tokens = tokenizer.getTokens();
+        BayesClassifier bayesClassifier = new BayesClassifier();
+        bayesClassifier.preprocess(text);
+        
+        double probPos = bayesClassifier.getPositiveProbability();
+        double probNeg = bayesClassifier.getNegativeProbability();
 
-        System.out.println("Tokens with white space tokenization");
-        for(int i=0; i<tokens.size(); i++){
-            System.out.println(tokens.get(i));
-        }  
-        
-        StopWordRemover stopWordRemover = new StopWordRemover();
-        ArrayList<String> result = stopWordRemover.removeStopWords(tokens);
-        
-        System.out.println("News after stop word removal");
-        for(int i=0; i<result.size(); i++){
-            System.out.println(result.get(i));
+        System.out.println("Positive: "+probPos);
+        System.out.println("Negative: "+probNeg);
+
+        if(probPos>probNeg){
+            System.out.println("Positive");
+        }
+        else{
+            System.out.println("Negative"); 
         }
         
-        Porter porter = new Porter();
-        for(int i=0; i<result.size(); i++){
-            result.set(i,porter.stripAffixes(result.get(i)));
-        }
-         
-        System.out.println("News after stop word removal");
-        for(int i=0; i<result.size(); i++){
-            System.out.println(result.get(i));
-        }
     }
 }

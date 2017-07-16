@@ -75,6 +75,9 @@ class TextFormatter{
             Porter porter = new Porter();
             StopWordRemover stopWordRemover = new StopWordRemover();
             
+            SpellingCorrector corrector = new SpellingCorrector();
+
+            
             for(String line = bufferedReader.readLine();line!=null;line = bufferedReader.readLine()){ 
                 
                 Tokenizer tokenizer = new Tokenizer(line);
@@ -84,6 +87,8 @@ class TextFormatter{
                 for(int i=0; i<result.size(); i++){
                     result.set(i,porter.stripAffixes(result.get(i)));
                 }
+
+                result = corrector.correctSpelling(result);
 
                 String newRow = String.join(" ",result);
                 fileWriter.write(newRow+newLine);

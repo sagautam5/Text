@@ -35,6 +35,7 @@ class Tokenizer{
      *
      */
     Tokenizer(String data){
+        data = data.replaceAll("[^a-zA-Z]"," ").toLowerCase();
         String[] words = data.split(" ");
         Collections.addAll(Tokens, words); 
     }
