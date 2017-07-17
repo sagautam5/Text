@@ -23,23 +23,25 @@ import project.classes.*;
 class Main{
     public static void main(String[] args){
         Scanner reader = new Scanner(System.in);
-        System.out.println("Enter Text: ");
-        String text = reader.nextLine();
+        while(true){
+            System.out.println("Enter Text: ");
+            String text = reader.nextLine();
 
-        BayesClassifier bayesClassifier = new BayesClassifier();
-        bayesClassifier.preprocess(text);
+            BayesClassifier bayesClassifier = new BayesClassifier();
+            bayesClassifier.preprocess(text);
         
-        double probPos = bayesClassifier.getPositiveProbability();
-        double probNeg = bayesClassifier.getNegativeProbability();
+            double probPos = bayesClassifier.getPositiveProbability();
+            double probNeg = bayesClassifier.getNegativeProbability();
 
-        System.out.println("Positive: "+probPos);
-        System.out.println("Negative: "+probNeg);
+            System.out.println("Positive: "+probPos);
+            System.out.println("Negative: "+probNeg);
 
-        if(probPos>probNeg){
-            System.out.println("Positive");
-        }
-        else{
-            System.out.println("Negative"); 
+            if(probPos>probNeg){
+                System.out.println("Positive");
+            }
+            else{
+                 System.out.println("Negative"); 
+            }
         }
         
     }
