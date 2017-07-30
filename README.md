@@ -1,5 +1,7 @@
 A Simple Sentiment Analysis of text which classifies text in to positive or negative
 
+A Naive Bayes Classifier
+
 Setup
 
 Step 1 : Clone Repository
